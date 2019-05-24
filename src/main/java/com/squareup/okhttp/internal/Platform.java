@@ -87,10 +87,10 @@ public class Platform {
 
   /**
    * Attempt a secure connection with basic functionality to maximize
-   * compatibility. Currently this uses SSL 3.0.
+   * compatibility. Oracle uses TLS 1.2
    */
   public void supportTlsIntolerantServer(SSLSocket socket) {
-    socket.setEnabledProtocols(new String[] {"SSLv3"});
+    socket.setEnabledProtocols(new String[] {"TLSv1", "TLSv1.1", "TLSv1.2"});
   }
 
   /** Returns the negotiated protocol, or null if no protocol was negotiated. */
